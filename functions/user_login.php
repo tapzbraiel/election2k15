@@ -13,9 +13,14 @@ if ($u->isValidLogin()) {
 	if (isset($_SESSION['HAS_ERROR'])) {
 		unset($_SESSION['HAS_ERROR']);
 	}
+
 		$_SESSION['usn']=$usn;
-	
+	if ($u->isAlreadyvoted($usn)) {
+		header('location:http://localhost/election2k15/public/validate-2.php');
+	}
+	else{
 		header('location:http://localhost/election2k15/public/voting-page.php');
+	}
 
 	}
 else{

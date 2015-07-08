@@ -8,7 +8,7 @@
 		                     	  <div class="modal-body">
 										<div class="col-md-12">
 											<label class="btn btn-warning text-center">
-									       			Please vote atleast 1 candidate :(
+									       			You've already voted. Thanks :)
 									   		</label>
 										</div>
 		                     	  </div>
@@ -19,7 +19,7 @@
 		                </div>
 		            </div>
 		            <?php 
-		            		include('../public/voting-page.php');
+		            		include('../public/index.php');
 		            ?>
 		      <script type="text/javascript">
 			    $(window).load(function(){

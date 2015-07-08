@@ -23,6 +23,26 @@ class User{
 
 		
 	}
+
+	function isAlreadyvoted($usn){
+		$sql = "SELECT * FROM `tbl_students` where sid='".$usn."'";
+		$result = Database::$conn->query($sql);
+		if ($result->num_rows >0) {
+			$row = $result->fetch_array();
+			$id = $row['id'];
+			$sql = "SELECT * FROM tbl_student_votes where student_id =" .$id;
+			$result=Database::$conn->query($sql);
+			if ($result->num_rows >0) {
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
+
+	}
 }
 
 ?>
