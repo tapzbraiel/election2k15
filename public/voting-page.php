@@ -262,6 +262,7 @@
 			    	<div class="row main_content">
 			    		<h3>Senators</h3>
 		                <hr class="full">
+		                <i>Maximum of 6 candidates</i>
 		               	<br/>
 						<?php
 				    		$c =new Candidate();
@@ -284,9 +285,15 @@
 				        	<p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s">Si Gina ky Programmer . Woooh Idol kaau namu na siya. Go Gina! Go Gina!. HAHAHA</p>
 				        	<div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
 				        		<div class= "team-member-contact">
-				        			<label class="btn btn-success">
-							       		<input type="radio"  value="aw" name="sex">Choose
-							   		</label>
+				        			<table>
+				        				
+				        					<label class="btn btn-success">
+					        					<input type="hidden" value="0" name="search[windows_is_true]">
+								       			<input type="checkbox"  value="1" name="search[windows_is_true]" id="search_windows_is_true">Choose
+								       			
+							       			</label>
+							       		
+							   		</table>
 				        		</div>	
 				        	</div>
 				    	</div>
@@ -297,6 +304,19 @@
 			    </div>	<!-- team-members -->
 			</div>	<!-- container -->
 	    </section>	<!-- team -->
+		 <script type="text/javascript">
+	    	$("div input[type=checkbox]").click(function(){
+	    		var countchecked = $("div input[type=checkbox]:checked").length;
+	    		if (countchecked >=2) {
+	    			$('div input[type=checkbox]').not(':checked').attr("disabled",true);
+	    		}
+	    		else
+	    		{
+	    			$('div input[type=checkbox]').not(':checked').attr("disabled",false);
+	    		}
+	    		;
+	    	});
+	    </script>
 
 	    <section id="team">
 	    	<div class="container">
@@ -349,7 +369,13 @@
 			    </div>	<!-- team-members -->
 			</div>	<!-- container -->
 	    </section>	
-  	
+  		<div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
+			<div class= "team-member-contact">
+				<form action="validate.php" method="POST">
+					<input type="submit" value="Submit and finish" class="btn btn-primary">
+				</form>	
+			</div>	
+		</div>
 <?php
 	include('inc/header.php')
 ?>

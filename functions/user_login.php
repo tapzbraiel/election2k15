@@ -15,13 +15,13 @@ if ($u->isValidLogin()) {
 	}
 		$_SESSION['usn']=$usn;
 	
-		header('location:http://localhost/voting/public/voting-page.php');
+		header('location:http://localhost/election2k15/public/voting-page.php');
 
 	}
 else{
 
 	$_SESSION['HAS_ERROR']=1;
-	header('location:http://localhost/voting/public');
+	header('location:http://localhost/election2k15/public');
 }
 
 
